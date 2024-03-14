@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Action for Promoted Students Report -->
+        <record id="action_report_promoted_students" model="ir.actions.act_window">
+            <field name="name">Promoted Students</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">school.student</field>  
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu Item for Promoted Students Report -->
+        <menuitem id="menu_report_promoted_students"
+                  name="Promoted Students"
+                  parent="menu_school_management_root"
+                  action="action_report_promoted_students"
+                  sequence="10"/>
+
+
+    </data>
+</odoo>

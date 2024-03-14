@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <report 
+          id='report_school_temps'
+          string='School Card'
+          model='school.student'
+          report_type='qweb-pdf'
+          name='school_management.report_school'
+          file='school_management.report_school'/>
+
+
+
+     
+
+</odoo>

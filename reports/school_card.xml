@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--<template id="report_school_temp">
+       <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+         <h2>School Card</h2>
+        </t>
+       </t>
+    </template>-->
+
+    <template id="report_school">
+        <t t-call="web.html_container">
+           <t t-foreach="docs" t-as="doc">
+           <t t-call="web.external_layout">
+              <h3>School card</h3>
+              
+              <p>Name: <t t-esc="doc.name"/></p>
+                <p>Gender: <t t-esc="doc.gender"/></p>
+                <p>Class: <t t-esc="doc.class_id"/></p>
+                <p>Status: <t t-esc="doc.status"/></p>
+                <p>Notes: <t t-esc="doc.notes"/></p>
+
+               <table border="1">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                    </tr>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td><t t-esc="doc.math_marks"/></td>
+                    </tr>
+                    <tr>
+                        <td>Physical Science</td>
+                        <td><t t-esc="doc.physical_science_marks"/></td>
+                    </tr>
+                    <tr>
+                        <td>Life Orientation</td>
+                        <td><t t-esc="doc.life_orientation_marks"/></td>
+                    </tr>
+                    <tr>
+                        <td>English FAL</td>
+                        <td><t t-esc="doc.english_fal_marks"/></td>
+                    </tr>
+                    <tr>
+                        <td>Isizulu HL</td>
+                        <td><t t-esc="doc.isizulu_hl_marks"/></td>
+                    </tr>
+                    <tr>
+                        <td>Engineering Graphics and Design</td>
+                        <td><t t-esc="doc.eng_graphics_design_marks"/></td>
+                    </tr>
+                    <tr>
+                        <td>Electrical Technology</td>
+                        <td><t t-esc="doc.electrical_technology_marks"/></td>
+                    </tr>
+                </table>
+
+                <!-- Display average marks -->
+                <p>Average Marks: <t t-esc="doc.average_marks"/></p>
+           </t>
+         </t>
+        </t>
+    </template>
+
+    
+
+</odoo>

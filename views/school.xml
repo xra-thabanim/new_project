@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- Definition of a view for the school.student model -->
+  <record id="school_class_form_view" model="ir.ui.view">
+    <field name="name">school.student.form</field>
+    <field name="model">school.student</field> 
+    <field name="arch" type="xml">
+      <form string="Student">
+        <!-- Form view layout -->
+        <sheet>
+          <!-- First group of fields -->
+          <group>
+            <group>
+              <!-- Fields related to student's personal information -->
+              <field name="name"/>
+              <field name="class_id"/>
+              <field name="division"/>
+              <field name="age"/>
+              <field name="notes"/>
+              <field name="gender"/>
+            </group> 
+            <!-- Second group of fields -->
+            <group>
+              <!-- Fields related to attachments and status -->
+              <field name="attachment" filename="attachment_filename"/>
+              <field name="status"/>
+            </group> 
+          </group> 
+
+          <!-- Group for academic marks -->
+          <group>
+            <!-- Fields for various subject marks -->
+            <field name="math_marks"/>
+            <field name="physical_science_marks"/>
+            <field name="life_orientation_marks"/>
+            <field name="english_fal_marks"/>
+            <field name="isizulu_hl_marks"/>
+            <field name="eng_graphics_design_marks"/>
+            <field name="electrical_technology_marks"/>
+          </group>
+
+          <!-- Group for displaying average marks -->
+          <group>
+            <field name="average_marks"/>
+          </group>
+
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Definition of an action to open the student records -->
+  <record id="action_student" model="ir.actions.act_window">
+    <field name="name">Student</field>
+    <field name="res_model">school.student</field> 
+    <field name="view_mode">kanban,tree,form</field>
+    <!-- Help text for the action -->
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">
+        Create school details
+      </p>
+    </field>
+  </record>
+
+  <!-- Definition of a menu item for the school module -->
+  <menuitem id="school_menu" name="School"/>
+  
+  <!-- Definition of a submenu item for school exams -->
+  <menuitem id="school_exams_menu" parent="school_menu"
+    name="School" action="action_student" sequence="6"/>
+
+</odoo>
